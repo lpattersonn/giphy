@@ -4,16 +4,16 @@ export default function Form() {
   return (
     <>
       <form>
-        <div class="input-group mb-3">
+        <div className="input-group mb-3">
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             placeholder="Recipient's username"
             aria-label="Recipient's username"
             aria-describedby="basic-addon2"
           />
-          <div class="input-group-append">
-            <button class="btn btn-primary" type="submit">
+          <div className="input-group-append">
+            <button className="btn btn-primary" type="submit">
               Button
             </button>
           </div>

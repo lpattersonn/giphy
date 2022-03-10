@@ -1,12 +1,20 @@
-import './style/App.css';
-import Form from './components/Form.js'
-import React from 'react';
+import "./style/App.css";
+import Form from "./components/Form.js";
+import GiphyList from "./components/GiphyList.js"
+import React, { useState, useEffect } from "react";
 
 function App() {
+  const [list, setLsit] = useState([]);
+
+  useEffect(() => {
+    axios
+  })
+
   return (
-    <div className="App">
-      <Form /> 
-    </div>
+    <section id="App">
+      <GiphyList list={list}/>
+      <Form />
+    </section>
   );
 }
 

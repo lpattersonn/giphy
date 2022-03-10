@@ -26,7 +26,7 @@ export default function Form(props) {
           <input
             type="text"
             className="form-control"
-            placeholder="Recipient's username"
+            placeholder="Search Giphy"
             aria-label="Recipient's username"
             aria-describedby="basic-addon2"
             value={search}

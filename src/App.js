@@ -5,13 +5,14 @@ import GiphyList from "./components/GiphyList.js";
 import axios from "axios";
 
 function App() {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState({});
 
+  // Set state to search result at root path
   useEffect(() => {
     axios
       .get("http://localhost:8081/")
       .then((res) => {
-        setList(res.data.data);
+        setList(res.data);
       })
       .catch((err) => {
         console.log(err.message);
@@ -20,8 +21,10 @@ function App() {
 
   return (
     <section id="App">
+       <Form setList={setList}/>
+    <div id="App_div">
       <GiphyList list={list} />
-      <Form setList={setList}/>
+    </div>
     </section>
   );
 }

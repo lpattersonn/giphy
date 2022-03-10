@@ -1,20 +1,25 @@
 import React from "react";
+import "../style/GiphyList.css";
 
 export default function GiphyList(props) {
   const { list } = props;
-  const result = list.map((element) => {
-    return (
-      <div key={element.id} className="card" style={{ width: "18rem" }}>
-        <img
-          className="card-img-top"
-          src={element.images.fixed_width.url}
-          alt="Card image cap"
-        />
-        <div className="card-body">
-          <h5 className="card-title">{element.title}</h5>
-        </div>
-      </div>
-    );
-  });
-  return <div>{result}</div>;
+
+  const entries = Object.entries(list);
+
+  // Return an array of JSX to render
+  const result = () => {
+    let newArray = [];
+    for (let element of entries) {
+      for (let array of element[1]) {
+        newArray.push(
+          <div key={array} className="">
+            <img className="" src={array} alt="Card" />
+          </div>
+        );
+      }
+    }
+    return newArray;
+  };
+
+  return <div className="GiphyList_main">{result()}</div>;
 }

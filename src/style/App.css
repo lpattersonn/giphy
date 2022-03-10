@@ -1,5 +1,18 @@
+body {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
 #App {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#App_div {
+  background-color: black;
   width: 100%;
   display: flex;
-    justify-content: center;
+  justify-content: center;
+  flex-direction: column;
 }

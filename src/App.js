@@ -11,7 +11,6 @@ function App() {
     axios
       .get("http://localhost:8081/")
       .then((res) => {
-        console.log(res.data);
         setList(res.data.data);
       })
       .catch((err) => {
@@ -22,7 +21,7 @@ function App() {
   return (
     <section id="App">
       <GiphyList list={list} />
-      <Form />
+      <Form setList={setList}/>
     </section>
   );
 }

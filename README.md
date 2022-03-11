@@ -36,11 +36,11 @@ Giphy is a single-page web application that allows users to retrieve gifs based 
    ```sh
    git clone https://github.com/lpattersonn/giphy-api.git
    ```
-4. Install NPM packages for giphy-api-api
+4. Install NPM packages for giphy-api
    ```sh
    npm i
    ```
-5. Create a .env file and add your giphy API key to the api_key environment variable for the giphy-api file
+5. Create a .env file and add your giphy API key to the api_key environment variable in the giphy-api directory
    ```sh
    touch .env
    ```

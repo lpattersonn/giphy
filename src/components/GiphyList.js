@@ -21,5 +21,5 @@ export default function GiphyList(props) {
     return newArray;
   };
 
-  return <div className="GiphyList_main">{result()}</div>;
+  return <div className="GiphyList-main">{result()}</div>;
 }

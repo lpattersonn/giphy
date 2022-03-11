@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "../style/Form.css";
 
 export default function Form(props) {
   const { setList } = props;
@@ -16,6 +17,7 @@ export default function Form(props) {
   return (
     <>
       <form
+        disabled={search.length < 1}
         onSubmit={(e) => {
           e.preventDefault();
           e.target.reset();
@@ -29,14 +31,17 @@ export default function Form(props) {
             placeholder="Search Giphy"
             aria-label="Recipient's username"
             aria-describedby="basic-addon2"
-            value={search}
             onChange={(e) => {
               setSearch(e.target.value);
             }}
           />
           <div className="input-group-append">
-            <button className="btn btn-primary" type="submit">
-              Button
+            <button
+              disabled={search.length < 1}
+              className="btn btn-primary"
+              type="submit"
+            >
+              Search
             </button>
           </div>
         </div>

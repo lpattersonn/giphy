@@ -5,13 +5,16 @@ import "../style/Form.css";
 export default function Form(props) {
   const { setList } = props;
   const [search, setSearch] = useState("");
+  const [result, setResult] = useState("");
 
   // Search Giphy for search term
   const handleSubmit = () => {
-    axios.get("/search", { params: { search: `${search}` } }).then((res) => {
-      console.log(res.data.data);
-      setList(res.data);
-    });
+    axios
+      .get("/search", { params: { search: `${search}`, result: `${result}` } })
+      .then((res) => {
+        console.log(res.data.data);
+        setList(res.data);
+      });
   };
 
   return (
@@ -26,14 +29,20 @@ export default function Form(props) {
       >
         <div className="input-group mb-3">
           <input
-            type="text"
-            className="form-control"
-            placeholder="Search Giphy"
-            aria-label="Recipient's username"
-            aria-describedby="basic-addon2"
             onChange={(e) => {
               setSearch(e.target.value);
             }}
+            type="text"
+            class="form-control"
+            placeholder="Enter Search Term"
+          />
+          <input
+          onChange={(e) => {
+            setResult(e.target.value)
+          }}
+            type="text"
+            class="form-control"
+            placeholder="Enter Number Of Results"
           />
           <div className="input-group-append">
             <button
@@ -41,7 +50,7 @@ export default function Form(props) {
               className="btn btn-primary"
               type="submit"
             >
-              Search
+              Search Giphy
             </button>
           </div>
         </div>
